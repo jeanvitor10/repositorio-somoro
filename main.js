@@ -11,3 +11,8 @@ function tocaSomPom(){
 }
 //chamada ou invocação da função tocaSomPom ao clicar no botão
 document.querySelector('tecla_pom').onclick = tocaSomPom;
+
+
+const listaDeTeclas = document.querySelectorAll('.tecla');
+//chamando a constante listaDeTeclas e busando
+listaDeTeclas[0].onlick = tocaSomPom
