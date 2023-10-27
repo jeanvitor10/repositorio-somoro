@@ -1,14 +1,16 @@
 //DECLARAÇÃO/criação da função tocaSomPom
-function tocaSomPom(){                             
-    document.querySelector('#som_tecla_bem-te-vi').play();
+function tocaSomPom(idElementoAudio){                   
+    document.querySelector(idElementoAudio).play();
 }
-//criando a referêcia comstante listaDeteclas e buscando a cla
-const listaDeTeclas = document.querySelectorAll('.tecla');
-
+//criando a referêcia comstante listaDeteclas e buscando a classe coletive .tecla
+const listaDeTeclas = document.querySelector('.tecla');
 let contador = 0;
 white(contador < 9){
-     listaDeTeclas[contador].onclick = tocaSomPom;
-     contador = contador + 1;
-     console.log(contador);
-
+    const efeito = listaDeTeclas[contador].classList[1];
+    const idAudio = "#som_" + efeito;
+    listaDeTeclas[contador].onclick = function() {
+        tocasom(idAudio);
+    }
+    contador = contador + 1;
+    console.log(contador)
 }
