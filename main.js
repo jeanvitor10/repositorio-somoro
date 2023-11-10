@@ -4,13 +4,14 @@ function tocaSomPom(idElementoAudio){
 }
 //criando a referêcia comstante listaDeteclas e buscando a classe coletive .tecla
 const listaDeTeclas = document.querySelector('.tecla');
-let contador = 0;
-white(contador < 9){
-    const efeito = listaDeTeclas[contador].classList[1];
-    const idAudio = "#som_" + efeito;
-    listaDeTeclas[contador].onclick = function() {
-        tocasom(idAudio);
+
+//criaçâo da repetição "white" e trocado pela "for"com variavel,condição e incremento
+for(let contador = 0; contador < listaDeTeclas.clientHeight; contador++){
+    const teclas = listaDeTeclas[contador]; //guarda o cortador da lista
+    const efeito = teclas.classList[1]; //chama 0 2º item classe individual do som
+    const idAudio = `#som"_${efeito}`; //utiliza a junção template string ${ }
+    teclas.onclick = function() {      //função anônima auxiliar para chamar tocaSom
+        tocasom(idAudio);         //chamada da função tocaSom com parÂmetro idAudio
     }
-    contador = contador + 1;
-    console.log(contador)
+
 }
