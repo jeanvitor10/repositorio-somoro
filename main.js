@@ -13,5 +13,8 @@ for(let contador = 0; contador < listaDeTeclas.clientHeight; contador++){
     teclas.onclick = function() {      //função anônima auxiliar para chamar tocaSom
         tocasom(idAudio);         //chamada da função tocaSom com parÂmetro idAudio
     }
-
+    teclas.onkeydown = function(){    
+        teclas.classList.add('ativa');
+    }
+ console.log(contador);
 }
