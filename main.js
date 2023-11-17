@@ -16,5 +16,5 @@ for(let contador = 0; contador < listaDeTeclas.clientHeight; contador++){
     teclas.onkeydown = function(){    
         teclas.classList.add('ativa');
     }
- console.log(contador);
+
 }
